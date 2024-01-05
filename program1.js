@@ -2,26 +2,18 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s) {
+def isValid(s):
+    stack = []
+    mapping = {')': '(', '}': '{', ']': '['}
 
-const stack = [];
+    for char in s:
+        if char in mapping:
+            top_element = stack.pop() if stack else '#'
+            if mapping[char] != top_element:
+                return False
+        else:
+            stack.append(char)
 
-const characters = { ')': '(', '}': '{', ']': '['};
-
-for (const char of s) {
-
-if (!characters [char]) { stack.push(char); }
-
-else if (stack.pop() !==
-
-characters [char]) {
-
-}
-
-return false;
-
-}
-
-return stack.length === 0; };
+    return not stack
 
 Conclusion
