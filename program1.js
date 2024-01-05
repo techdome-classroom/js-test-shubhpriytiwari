@@ -3,26 +3,25 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-    const stack = [];
-    const parens = '() {} []';
-    let i = 0;
 
-    while(i < s.length)
-    {
-        stack.push(s[i]);
-        i++;
+const stack = [];
 
-        let open = stack[stack.length - 2];
-        let closed = stack[stack.length - 1];
+const characters = { ')': '(', '}': '{', ']': '['};
 
-        let potParens = open + closed;
+for (const char of s) {
 
-        if(parens.includes(potParens)) {
-            stack.pop();
-            stack.pop();
-        }
-    }
-    
-    return stack.length === 0;
-};
-    
+if (!characters [char]) { stack.push(char); }
+
+else if (stack.pop() !==
+
+characters [char]) {
+
+}
+
+return false;
+
+}
+
+return stack.length === 0; };
+
+Conclusion
